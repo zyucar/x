@@ -138,3 +138,44 @@ installgems() {
 		try=$(($try - 1))
 	done
 }
+
+# debian paket deposu ekle
+adddebrepository() {
+	local name repository distribution components keyurl
+
+	[ $# -ge 5 ] || bug "argüman sayısı eksik"
+
+	name="$1"
+	repository="$2"
+	distribution="$3"
+	components="$4"
+	keyurl="$5"
+
+	case "$distribution" in
+	""|-) distribution=$(lsb_release -s -c 2>/dev/null ||:) ;;
+	esac
+	case "$components" in
+	""|-) components='main' ;;
+	esac
+	case "$repository" in
+	(http|ftp)://) ;;
+	*) repository="http://${repository}" ;;
+	esac
+	case "$keyurl" in
+	(http|ftp)://) ;;
+	"") ;;
+	*) keyurl="http://${keyurl}" ;;
+	esac
+
+	list=/etc/apt/sources.list.d/$name.list
+	if [ ! -f "$list" ]; then
+		sudoattempt
+		sudo sh -c "cat >$list <<EOF
+deb $repository $distribution $components
+EOF
+"
+		if [ -n "$keyurl" ]; then
+			wget "$keyurl" -qO- | sudo apt-key add -
+		fi
+	fi
+}
