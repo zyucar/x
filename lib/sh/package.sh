@@ -25,8 +25,35 @@ xaptitude() {
 	sudo aptitude $command -f --quiet --assume-yes --allow-untrusted --without-recommends --safe-resolver "$@"
 }
 
+# Aptitude hata verdiğinde bir de APT ile dene
+aptitude_or_aptget() {
+	xaptitude "$@" || xaptget "$@"
+}
+
+# deb paketlerini hata halinde tekrar deneyerek kur
+installdebs() {
+	local message="$1"
+	shift ||:
+
+	say "${message}..."
+
+	local try=2
+	while [ $try -gt 0 ]; do
+		err=0
+
+		aptitude_or_aptget "$@" || err=$?
+
+		# hata yoksa çık
+		[ $err -ne 0 ] || break
+
+		cry "Bazı Deb paketlerinin kurulumunda hata oluştu. " \
+		    "Tekrar denenerek kuruluma devam edilecek..."
+		try=$(($try - 1))
+	done
+}
+
 # adresi verilen bir deb paketini indir ve kur
-debinstall() {
+debinstallfromurl() {
 	local url deb
 
 	url="$1"
@@ -88,4 +115,26 @@ xgem191() {
 	shift
 
 	sudo gem1.9.1 $command --quiet --force --no-ri --no-rdoc "$@"
+}
+
+# gem paketlerini hata halinde tekrar deneyerek kur
+installgems() {
+	local message="$1"
+	shift ||:
+
+	say "${message}..."
+
+	local try=2
+	while [ $try -gt 0 ]; do
+		err=0
+
+		xgem191 install "$@" || err=$?
+
+		# hata yoksa çık
+		[ $err -ne 0 ] || break
+
+		cry "Bazı Gem paketlerinin kurulumunda hata oluştu. " \
+		    "Tekrar denenerek kuruluma devam edilecek..."
+		try=$(($try - 1))
+	done
 }
