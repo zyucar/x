@@ -55,20 +55,7 @@ if [ -z "$HAS_APT_UPDATED" ]; then
 	xaptitude update ||:
 fi
 
-try=2
-while [ $try -gt 0 ]; do
-	err=0
-
-	say "Gerekli Deb paketleri kuruluyor..."
-	xaptitude install $DEB_BASE || xaptget install $DEB_BASE || err=$?
-
-	# hata yoksa çık
-	[ $err -ne 0 ] || break
-
-	cry "Bazı Deb paketlerin kurulumunda hata oluştu. " \
-	    "Tekrar denenerek kuruluma devam edilecek..."
-	try=$(($try - 1))
-done
+installdebs "Gerekli Deb paketleri kuruluyor" $DEB_BASE
 
 # Türkçe dokunuşlar.
 if [ -d "$MYSQLCONFDIR" ]; then
