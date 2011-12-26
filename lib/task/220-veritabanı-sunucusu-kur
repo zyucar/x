@@ -4,6 +4,7 @@ DEB_BASE="
 automysqlbackup
 libmysqlclient-dev
 libsqlite3-dev
+libssl-dev
 mysql-client
 mysql-server
 sqlite3
