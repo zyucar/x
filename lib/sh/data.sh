@@ -19,7 +19,7 @@ if perl -e 'use HTTP::Tiny;' 2>/dev/null; then
 			my $url = shift @ARGV;
 			my $http = HTTP::Tiny->new;
 
-			my $response = $httpa->get($url);
+			my $response = $http->get($url);
 			unless ($response->{success}) {
 				die "Could not get $url: $response->{status}\n";
 			}
