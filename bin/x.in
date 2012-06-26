@@ -53,10 +53,10 @@ readonly REPOSITORY_INITIATED_MESSAGE='ilk'
 readonly COWFILE='doc/images/19x.png'
 
 # Bu paketler en başta gerekiyor.
+# XXX Dikkat!  Bunlar birer komut.
 readonly DEB_CORE="
 curl
 git
-libio-socket-ssl-perl
 pdmenu
 sudo
 "
