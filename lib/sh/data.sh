@@ -1,38 +1,10 @@
-# URL'deki veriyi stdandart çıktıda görüntüle
+# URL'deki veriyi standart çıktıda görüntüle
 #
 # Kullanım: <URL>
-if perl -e 'use HTTP::Tiny; use IO::Socket::SSL;' 2>/dev/null; then
-	# HTTP::Tiny modülü Perl 5.14 ile standart geliyor
-	# Fakat IO::Socket::SSL standart değil maalesef :-(
-	get() {
-		perl -e '
-			use strict;
-			use warnings;
-			use feature qw(say);
-			use open qw(:std :utf8);
+get() {
+	curl -s -k "$@"
+}
 
-			use HTTP::Tiny;
-
-			unless (@ARGV) {
-				die "no URL given!\n";
-			}
-
-			my $url = shift @ARGV;
-			my $http = HTTP::Tiny->new;
-
-			my $response = $http->get($url);
-			unless ($response->{success}) {
-				die "Could not get $url: $response->{status}\n";
-			}
-
-			say $response->{content};
-		' "$@"
-	}
-else
-	get() {
-		curl -s -k "$@"
-	}
-fi
 
 # Standart girdideki JSON verisinden değer oku
 #
@@ -43,11 +15,13 @@ json_get() {
 		use warnings;
 		use feature qw(say);
 		use open qw(:std :utf8);
+		use Encode qw(encode_utf8);
 
 		use JSON qw(decode_json);
 
 		my $json = do { local $/; <STDIN> };
 		die "Empty json content!\n" unless defined $json;
+		$json = encode_utf8($json);
 
 		my ($decoded_json, @stack) = (decode_json($json), ());
 		while (@ARGV) {

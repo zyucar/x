@@ -244,9 +244,6 @@ exportgit() {
 
 # x ortam değişkenlerini anons et
 exportx() {
-	# üzerine yazılan bir değişken olduğundan PATH'i her seferinde ayarla
-	PATH="$X_PATH"
-
 	export PATH X_PATH X_ATTR X_EDITOR X_TERM X_SCREEN X_NAME X_EMAIL
 }
 
