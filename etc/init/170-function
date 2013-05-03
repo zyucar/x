@@ -1,6 +1,6 @@
 # Servisleri hızlı şekilde yönetebilmek için bir kısa yol.
 # Örnekler:
-# 
+#
 # 	i cron       # sudo service cron restart
 # 	i nginx stop # sudo service nginx stop
 #   i a<TAB>     # ismi a ile başlayan servisler
