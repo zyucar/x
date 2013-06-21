@@ -39,7 +39,7 @@ locale_generate() {
 	local -a missings
 
 	for name; do
-		/usr/sbin/validlocale "$name" 2>/dev/null || missings+="$name"
+		/usr/sbin/validlocale "$name" >/dev/null 2>&1 || missings+=("$name")
 	done
 
 	[[ -n "${missings[@]}" ]] || return 0
