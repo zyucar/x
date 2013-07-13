@@ -2,6 +2,7 @@
 " dosyasını düzenleyin.
 
 " Bundle: git://github.com/bronson/vim-trailing-whitespace.git
+" Bundle: git://github.com/dart-lang/dart-vim-plugin.git
 " Bundle: git://github.com/ervandew/supertab.git
 " Bundle: git://github.com/garbas/vim-snipmate.git
 " Bundle: git://github.com/honza/vim-snippets.git
