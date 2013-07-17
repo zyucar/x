@@ -12,6 +12,7 @@
 " Bundle: git://github.com/majutsushi/tagbar.git
 " Bundle: git://github.com/MarcWeber/vim-addon-mw-utils.git
 " Bundle: git://github.com/mattn/webapi-vim.git
+" Bundle: git://github.com/mattn/zencoding-vim.git
 " Bundle: git://github.com/scrooloose/syntastic.git
 " Bundle: git://github.com/slim-template/vim-slim.git
 " Bundle: git://github.com/spiiph/vim-space.git
