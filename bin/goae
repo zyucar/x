@@ -49,8 +49,9 @@ usetempdir() {
 }
 
 locate_conf() {
-	while [ "$PWD" != "/" ]; do
+	local f
 
+	while [ "$PWD" != "/" ]; do
 		for f in app.yaml app.yml; do
 			if [ -f $f ]; then
 				return 0
