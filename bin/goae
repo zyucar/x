@@ -76,11 +76,13 @@ if [ -n "$GOOGLE_APPENGINE_DIR" ]; then
 		die "$GOOGLE_APPENGINE_DIR dizini bulunamadı"
 else
 	for d in ~ /opt /usr/local/lib /usr/local; do
-		try="$d/google_appengine"
-		if [ -d "$try" ]; then
-			GOOGLE_APPENGINE_DIR=$try
-			break
-		fi
+		for a in go_appengine google_appengine; do
+			try="$d/$a"
+			if [ -d "$try" ]; then
+				GOOGLE_APPENGINE_DIR=$try
+				break
+			fi
+		done
 	done
 fi
 
