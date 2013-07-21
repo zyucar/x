@@ -19,6 +19,11 @@ function! SyntaxCheckers_go_goae_IsAvailable()
 		let g:is_google_appengine = !v:shell_error
 	endif
 
+	" Let it the default checker
+	if g:is_google_appengine
+		let g:syntastic_go_checkers = ['goae']
+	endif
+
 	return g:is_google_appengine
 endfunction
 
