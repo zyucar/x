@@ -36,8 +36,6 @@ augroup goedit
 
 		au FileType go au BufWritePre <buffer> FmtWithImports
 	endif
-
-	au FileType go au BufWritePre <buffer> Fmt
 augroup END
 
 augroup mailedit
