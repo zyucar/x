@@ -35,6 +35,8 @@ augroup goedit
 		endfunction
 
 		au FileType go au BufWritePre <buffer> FmtWithImports
+	else
+		au FileType go au BufWritePre <buffer> Fmt
 	endif
 augroup END
 
