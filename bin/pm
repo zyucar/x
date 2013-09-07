@@ -1,0 +1,38 @@
+#!/bin/bash
+
+PROGNAME=${0##*/}
+
+if [ $# -eq 0 ]; then
+	echo >&2 "Kullanım: $0 <id>..."
+	exit 1
+fi
+
+printf >&2 "Ana Parola: "
+read -s master
+echo >&2 ""
+
+for id; do
+	case "$PROGNAME" in
+	pin)
+		pin4=$(
+			passwordmaker -g 4 -a SHA256 -f /dev/null -m "$master" \
+				-c "0123456789" -r "$id"
+		)
+		pin8=$(passwordmaker -g 8 -a SHA256 -f /dev/null -m "$master" \
+				-c "0123456789" -r "$id"
+		)
+		pinalnum=$(
+			passwordmaker -g 8 -a SHA256 -f /dev/null -m "$master" \
+				-c "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" \
+				-r "$id"
+		)
+		printf "$id\t${pin4} ${pin8} ${pinalnum}\n"
+		;;
+	*)
+		password=$(
+			passwordmaker -g 12 -a SHA256 -f /dev/null -m "$master" -r "$id"
+		)
+		printf "$id\t${password}\n"
+		;;
+	esac
+done
