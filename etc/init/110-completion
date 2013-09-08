@@ -1,7 +1,10 @@
 # Komut tamamlamasını etkinleştir.
 if [ -z "$BASH_COMPLETION" ] && [ -f /etc/bash_completion ] && ! shopt -oq posix; then
         . /etc/bash_completion
+fi
 
+# Komut tamamlaması düzeltme hazırlığı ve ekstralar.
+if [ -n "$BASH_COMPLETION" ]; then
         # Stolen from http://ubuntuforums.org/showthread.php?t=733397
         # Author.: Ole J
         # Date...: 23.03.2008
