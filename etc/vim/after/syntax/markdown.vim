@@ -16,8 +16,8 @@ syn region markdownCodeBlock start=" \{8,}\|\t" end="$" contained contains=markd
 syn match markdownCodeBlockShebang "\%( \{8,}\|\t\)\%(!\|#!\)\S\+" contained
 
 syn clear markdownListMarker
-syn match markdownListMarker "\%(\t\| \{0,4\}\)[*]\%(\s\{3}\S\)\@=" contained contains=markdownItemBullet
-syn match markdownListMarker "\%(\t\| \{0,4\}\)[-+]\%(\s\+\S\)\@=" contained contains=markdownItemBullet
+syn match markdownListMarker "\%(\t\| \{0,4\}\)[-]\%(\s\{3}\S\)\@=" contained contains=markdownItemBullet
+syn match markdownListMarker "\%(\t\| \{0,4\}\)[*+]\%(\s\+\S\)\@=" contained contains=markdownItemBullet
 syn match markdownItemBullet '[-*+]' contained
 
 syn clear markdownOrderedListMarker
