@@ -67,3 +67,5 @@
 	merge = refs/heads/master
 [push]
 	default = simple
+[remote "origin"]
+	push = HEAD
