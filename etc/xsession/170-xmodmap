@@ -1,0 +1,9 @@
+if [ -x /usr/bin/xmodmap ]; then
+	# Q klavyedeki gereksiz "é" (shift-<">) karakterini "`" yap
+	xmodmap -e "keycode 49 = quotedbl grave"
+
+	# Varsa tuş eşlemelerini yükle
+	if [ -f ~/.Xmodmap ]; then
+		xmodmap ~/.Xmodmap
+	fi
+fi

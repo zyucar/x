@@ -3,8 +3,3 @@ for f in $(listdir "$X/etc/xresources"); do
 	xrdb -merge "$f"
 done
 unset f
-
-# Read the user keymaps.
-if [ -f ~/.Xmodmap ]; then
-	xmodmap ~/.Xmodmap
-fi
