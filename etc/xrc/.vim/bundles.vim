@@ -23,7 +23,6 @@
 " Bundle: git://github.com/tpope/vim-fugitive.git
 " Bundle: git://github.com/tpope/vim-git.git
 " Bundle: git://github.com/tpope/vim-haml.git
-" Bundle: git://github.com/tpope/vim-liquid.git
 " Bundle: git://github.com/tpope/vim-markdown.git
 " Bundle: git://github.com/tpope/vim-rails.git
 " Bundle: git://github.com/tpope/vim-rake.git
