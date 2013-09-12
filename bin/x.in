@@ -11,7 +11,7 @@
 # DİKKAT!  Bu betiği çalıştırmadan önce kişisel GitHub hesabınızda şu depodan
 # çoğaltarak (fork) elde edeceğiniz "x" isimli bir deponuz olmalıdır:
 #
-# 	https://github.com/00010011/x
+# 	https://github.com/19/x
 
 set -e
 
@@ -30,7 +30,7 @@ fi
 readonly DESTDIR=$HOME
 
 # Orijin depo hangisi?
-readonly UPSTREAM='00010011/x'
+readonly UPSTREAM='19/x'
 
 # program ismi
 readonly PROGNAME='kur'
