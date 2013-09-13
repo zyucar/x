@@ -18,7 +18,7 @@ set -e
 # API ihracı için Bash gerekiyor.
 if [ -z "$BASH" ]; then
 	printf >&2 "Lütfen bu programı Bash ile çalıştırın.  Örneğin:\n\n"
-	printf >&2 "\twget x.ondokuz.biz -qO- | bash\n"
+	printf >&2 "\twget ondokuz.biz/x -qO- | bash\n"
 	exit 1
 fi
 
