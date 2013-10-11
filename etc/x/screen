@@ -83,9 +83,10 @@ conffiles=$(
 # çoğullayıcıyı başlat
 case "$screen" in
 tmux|*/tmux)
+	opts="-q"
 	if ! anyattr dumb; then
 		# 256 renk desteği
-		opts="-2"
+		opts="$opts -2"
 		sessionfile=$confdir/session-256color
 		[ -f "$sessionfile" ] && opts="$opts -f $sessionfile"
 		# Yeni oturumlarda önce istemciyi ayır
