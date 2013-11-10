@@ -15,14 +15,15 @@ for id; do
 	case "$PROGNAME" in
 	pin)
 		pin4=$(
-			passwordmaker -g 4 -a SHA256 -f /dev/null -m "$master" \
+			passwordmaker -g 4 -m "$master" \
 				-c "0123456789" -r "$id"
 		)
-		pin8=$(passwordmaker -g 8 -a SHA256 -f /dev/null -m "$master" \
+		pin8=$(
+			passwordmaker -g 8 -m "$master" \
 				-c "0123456789" -r "$id"
 		)
 		pinalnum=$(
-			passwordmaker -g 8 -a SHA256 -f /dev/null -m "$master" \
+			passwordmaker -g 8 -m "$master" \
 				-c "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" \
 				-r "$id"
 		)
@@ -30,7 +31,7 @@ for id; do
 		;;
 	*)
 		password=$(
-			passwordmaker -g 12 -a SHA256 -f /dev/null -m "$master" -r "$id"
+			passwordmaker -m "$master" -r "$id"
 		)
 		printf "$id\t${password}\n"
 		;;
