@@ -33,7 +33,7 @@ for id; do
 		password=$(
 			passwordmaker -m "$master" -r "$id"
 		)
-		printf "$id\t${password}\n"
+		echo -e "$id\t${password}"
 		;;
 	esac
 done
