@@ -113,7 +113,12 @@ usetempdir CACHEDIR
 
 $builder -app_base "$appbase" \
 	 -binary_name _go_app \
-	 -dynamic \
 	 -goroot $goroot \
+	 ${GOPATH+-gopath $GOPATH} \
+	 -extra_imports appengine_internal/init \
+	 -gcflags "-I,$(echo $goroot/pkg/*_appengine)" \
+	 -ldflags "-L,$(echo $goroot/pkg/*_appengine)" \
+	 -nobuild_files '^^$' \
 	 -unsafe \
+	 -dynamic \
 	 -work_dir $CACHEDIR $sources
