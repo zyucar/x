@@ -28,7 +28,7 @@ function! SyntaxCheckers_go_goae_IsAvailable()
 endfunction
 
 function! SyntaxCheckers_go_goae_GetLocList()
-	let makeprg = 'goae 1>' . syntastic#util#DevNull()
+	let makeprg = 'goae'
 	let errorformat = '%*[^\ ]\ %*[^\ ]\ %f:%l:%v:\ %m,%f:%l:\ %m'
 
 	return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
