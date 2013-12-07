@@ -13,7 +13,7 @@
 " Bundle: https://github.com/MarcWeber/vim-addon-mw-utils.git
 " Bundle: https://github.com/mattn/webapi-vim.git
 " Bundle: https://github.com/mattn/zencoding-vim.git
-" Bundle: https://github.com/roktas/vim-go-appengine.git
+" Bundle: https://github.com/roktas/syntastic-more.git
 " Bundle: https://github.com/scrooloose/syntastic.git
 " Bundle: https://github.com/slim-template/vim-slim.git
 " Bundle: https://github.com/spiiph/vim-space.git
