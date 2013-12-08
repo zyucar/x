@@ -5,6 +5,7 @@
 " Bundle: https://github.com/dart-lang/dart-vim-plugin.git
 " Bundle: https://github.com/ervandew/supertab.git
 " Bundle: https://github.com/garbas/vim-snipmate.git
+" Bundle: https://github.com/godlygeek/tabular.git
 " Bundle: https://github.com/honza/vim-snippets.git
 " Bundle: https://github.com/jnwhiteh/vim-golang.git
 " Bundle: https://github.com/juvenn/mustache.vim.git
@@ -13,6 +14,7 @@
 " Bundle: https://github.com/MarcWeber/vim-addon-mw-utils.git
 " Bundle: https://github.com/mattn/webapi-vim.git
 " Bundle: https://github.com/mattn/zencoding-vim.git
+" Bundle: https://github.com/mileszs/ack.vim.git
 " Bundle: https://github.com/roktas/syntastic-more.git
 " Bundle: https://github.com/scrooloose/syntastic.git
 " Bundle: https://github.com/slim-template/vim-slim.git
@@ -30,9 +32,7 @@
 " Bundle: https://github.com/tpope/vim-repeat.git
 " Bundle: https://github.com/tpope/vim-surround.git
 " Bundle: https://github.com/tpope/vim-vividchalk.git
-" Bundle: https://github.com/vim-scripts/Align.git
 " Bundle: https://github.com/vim-scripts/a.vim.git
-" Bundle: https://github.com/vim-scripts/Command-T.git
 " Bundle: https://github.com/vim-scripts/desert256.vim.git
 " Bundle: https://github.com/vim-scripts/DrawIt.git
 " Bundle: https://github.com/vim-scripts/Gist.vim.git
