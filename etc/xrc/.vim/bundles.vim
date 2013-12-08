@@ -5,9 +5,9 @@
 " Bundle: https://github.com/dart-lang/dart-vim-plugin.git
 " Bundle: https://github.com/ervandew/supertab.git
 " Bundle: https://github.com/garbas/vim-snipmate.git
-" Bundle: https://github.com/godlygeek/tabular.git
 " Bundle: https://github.com/honza/vim-snippets.git
 " Bundle: https://github.com/jnwhiteh/vim-golang.git
+" Bundle: https://github.com/junegunn/vim-easy-align.git
 " Bundle: https://github.com/juvenn/mustache.vim.git
 " Bundle: https://github.com/kchmck/vim-coffee-script.git
 " Bundle: https://github.com/majutsushi/tagbar.git
