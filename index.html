@@ -40,10 +40,6 @@ readonly LIBFILE='lib/x'
 readonly XRCFILE='.x'
 # x sürücü dizini
 readonly XRCDIR='etc/xrc'
-# yeni kurulumlarda hangi dokümanı okutacağız?
-readonly MANFILE='doc/man/man7/19-x.7'
-# kılavuz
-readonly MANUAL='19-x'
 # gizli dosyaların konulacağı dizin
 readonly PRIVATEDIR='.private'
 # gizli sayılması gereken dizinler
@@ -53,7 +49,7 @@ readonly REPOSITORY='x'
 # depo ilklenirken kullanılacak commit mesajı
 readonly REPOSITORY_INITIATED_MESSAGE='ilk'
 # inek (size demedim)
-readonly COWFILE='doc/images/19x.png'
+readonly COWFILE='etc/asset/x.png'
 
 # Bu paketler en başta gerekiyor.
 # XXX Dikkat!  Bunlar birer komut.
@@ -1970,15 +1966,7 @@ go() {
 			    "dizinini kullanın.  Dikkat! Bu dizini"\
 			    "depoya eklemeyin."
 		fi
-
-		if [ -f "$MANFILE" ] &&
-		   yesno "19/x kılavuzunu okumak ister misiniz?" e; then
-			man "$MANFILE" 2>/dev/null ||:
-		fi
 	fi
-
-	# Ayrım gözetmeksizin herkese.
-	say "19/x kılavuzunu okumak için 'man $MANUAL' komutunu çalıştırın."
 
 	# Yedeklenen dosyalar varsa varlığından bahset.
 	if ! rmdir $BACKUPDIR 2>/dev/null; then
