@@ -2,7 +2,7 @@
 [ -n "$VISUAL" ] || VISUAL="$EDITOR"
 [ -n "$PAGER"  ] || PAGER=/usr/bin/less
 
-LESS=-RX
+LESS=-RXF
 DH_ALWAYS_EXCLUDE=CVS:.svn:.git:.hg
 
 export EDITOR VISUAL PAGER LESS DH_ALWAYS_EXCLUDE
