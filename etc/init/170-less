@@ -1,3 +1,6 @@
+# Less seçenekleri.
+export LESS='-F'
+
 # 256 renkli less.
 if ! anyattr dumb; then
 	export LESS_TERMCAP_mb=$'\E[38;5;111m'
