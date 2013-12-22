@@ -3,6 +3,7 @@ set autowrite
 set backspace=indent,eol,start
 set backupdir=./.backup,~/.backup,.,/tmp
 set backupskip=
+set completeopt-=preview
 set cpoptions+=J
 set cpoptions-=<
 set fileformats=unix,dos,mac
