@@ -40,14 +40,18 @@ fi
 
 # Gocode'u kur.  Bunun için güncel bir go sürümü lazım.
 if ! hascommand gocode; then
-	if hasdeb golang-go; then
+	if hascommand go; then
 		say "Gocode kuruluyor..."
-		sudoattempt
-		if sudo go get -u "$GOCODE_PKG"; then
-			sudo rm -f /usr/local/bin/gocode
-			sudo cp "${GOCODE_DIR}/gocode" /usr/local/bin/
+		if [ -z "$GOPATH" ]; then
+			sudoattempt
+			if sudo go get -u "$GOCODE_PKG"; then
+				sudo rm -f /usr/local/bin/gocode
+				sudo cp "${GOCODE_DIR}/gocode" /usr/local/bin/
+			fi
+		else
+			go get -u "$GOCODE_PKG"
 		fi
 	elif ! anyattr server; then
-		cry "golang-go paketi kurulu değil; Gocode kurulmayacak"
+		cry "Go kurulu değil; Gocode kurulmayacak"
 	fi
 fi
