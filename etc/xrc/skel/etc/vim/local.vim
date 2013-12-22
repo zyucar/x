@@ -4,4 +4,4 @@
 " Eklentinin depo adını belirledikten sonra bunu aşağıdaki bir satıra yazın ve
 " baştaki '#' karakterini kaldırın.
 
-" #Bundle: git://github.com/vim-scripts/<EKLENTİ ADI>.git
+" #Bundle: https://github.com/vim-scripts/<EKLENTİ ADI>
