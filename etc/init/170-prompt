@@ -68,7 +68,7 @@ prompt_command() {
 	PS1="${debian_chroot:+($debian_chroot)}${PUSER}\[$CO_198\]@\[$CO_DEFAULT\]$PHOST:$PPWD\[$CO_250\]\$\[$CO_DEFAULT\] "
 
 	# Hack for tmux.  See http://tmux.cvs.sourceforge.net/viewvc/tmux/tmux/FAQ
-	[ -z "$TMUX" ] || tmux setenv TMUXPWD_$(tmux display -p "#I") $PWD
+	[ -z "$TMUX" ] || tmux setenv TMUXPWD_$(tmux display -p "#I") "$PWD"
 }
 
 # Komut istemini etkinleştir.
