@@ -60,3 +60,8 @@ function! PrintFile(fname)
 	return v:shell_error
 endfunction
 set printexpr=PrintFile(v:fname_in)
+
+" Set a standard shell (e.g. Fish shell doesn't work)
+if has('unix')
+	set shell=bash
+endif
