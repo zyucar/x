@@ -1,9 +1,11 @@
 set -lx curdir (dirname (status -f))
 
 if not contains $curdir/completions $fish_complete_path
-	set fish_complete_path $fish_complete_path $curdir/completions
+	set fish_complete_path $curdir/completions $fish_complete_path
 end
 
 if not contains $curdir/functions $fish_function_path
- 	set fish_function_path $fish_function_path $curdir/functions
+ 	set fish_function_path $curdir/functions $fish_function_path
 end
+
+set fish_greeting ""
