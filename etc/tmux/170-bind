@@ -4,7 +4,7 @@
 # 	http://tmux.cvs.sourceforge.net/viewvc/tmux/tmux/FAQ
 #
 # (TMUXPWD_* değişkeni de ayarlanmalı; bu şimdilik bash prompt dosyasında.)
-bind c run-shell 'tmux new-window -n sh "cd $(tmux display -p "\$TMUXPWD_#I"); exec bash"'
+bind c run-shell 'tmux new-window -n sh "cd $(tmux display -p "\$TMUXPWD_#I"); exec ${X_SHELL:-/bin/bash}"'
 
 # bağlam duyarlı yardım (ayrı pencerede)
 bind -n F1 run-shell 'exec x-tmux-man'
