@@ -9,3 +9,5 @@ if not contains $curdir/functions $fish_function_path
 end
 
 set fish_greeting ""
+
+set fish_color_command "5fff00"
