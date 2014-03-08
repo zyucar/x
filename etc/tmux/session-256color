@@ -3,5 +3,3 @@
 
 # TERM değişkeni 256 rengi belirtmeli
 set -g default-terminal "screen-256color"
-# kalın yazıtip için parlak renkler kullan
-set -ag terminal-overrides ",xterm-256color:setaf=\e[3%p1%dm:setab=\e[4%p1%dm"

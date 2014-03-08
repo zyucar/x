@@ -3,6 +3,7 @@
 
 " Bundle: https://github.com/Blackrush/vim-gocode
 " Bundle: https://github.com/bronson/vim-trailing-whitespace.git
+" Bundle: https://github.com/dag/vim-fish.git
 " Bundle: https://github.com/dart-lang/dart-vim-plugin.git
 " Bundle: https://github.com/ervandew/supertab.git
 " Bundle: https://github.com/garbas/vim-snipmate.git

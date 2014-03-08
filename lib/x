@@ -29,6 +29,10 @@ if [ -z "$X" ]; then
 	X_PATH=$PATH
 	export PATH X_PATH
 
+	# SHELL - Öntanımlı kabuk
+	X_SHELL=${SHELL:-/bin/bash}
+	export X_SHELL
+
 	# MANPATH - Kılavuz belgeleri
 	MANPATH=$MANPATH:$X/doc/man
 	export MANPATH

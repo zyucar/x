@@ -1,6 +1,6 @@
 # öntanımlı komutu bir bash kabuğu olarak ayarla.
-set -g default-command 'exec /bin/bash'
-set -g default-shell /bin/bash
+set -g default-command "exec $X_SHELL"
+set -g default-shell "$X_SHELL"
 # ne me lazım
 setw -g utf8 on
 # başlıkları etkinleştir
@@ -8,7 +8,7 @@ set -g set-titles on
 # başlıkları daima eski haline getir
 set -g set-titles-string "#W"
 # ortam değişkenlerine neler eklenmeli
-set -ag update-environment "X X_ATTR"
+set -ag update-environment " X X_ATTR X_SHELL"
 # sorunsuz geri sardırma için
 set -ag terminal-overrides ',xterm*:smcup@:rmcup@'
 
