@@ -2,5 +2,5 @@
 set -gx LANG en_US.UTF-8
 
 if test -f $X/etc/fish/config.fish
-	source $X/etc/fish/config.fish
+	. $X/etc/fish/config.fish
 end
