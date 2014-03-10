@@ -13,7 +13,7 @@ bind -n S-F1 run-shell 'exec x-tmux-man 19-not'
 # geliştirme ortamında program çalıştır
 bind -n F12 split-window -h -p 40 'run'
 # midnight commander
-bind C new-window "exec mc"
+bind C run-shell 'tmux new-window "exec bash -c \"SHELL=/bin/bash exec mc\""'
 # htop
 bind H split-window -t 18 "exec htop"
 # log dosyası görüntüle
