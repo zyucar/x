@@ -25,5 +25,5 @@ if ! anyattr server; then
 	sudoattempt
 	xaptget update ||:
 
-	installdebs "YouCompleteMe eklentisi kuruluyor" vim-youcompleteme &&vam install youcompleteme
+	installdebs "YouCompleteMe eklentisi kuruluyor" vim-youcompleteme && vam install youcompleteme
 fi
