@@ -4,7 +4,6 @@
 " Bundle: https://github.com/bronson/vim-trailing-whitespace.git
 " Bundle: https://github.com/dag/vim-fish.git
 " Bundle: https://github.com/dart-lang/dart-vim-plugin.git
-" Bundle: https://github.com/ervandew/supertab.git
 " Bundle: https://github.com/fatih/vim-go.git
 " Bundle: https://github.com/junegunn/vim-easy-align.git
 " Bundle: https://github.com/juvenn/mustache.vim.git
