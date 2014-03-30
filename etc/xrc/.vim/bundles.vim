@@ -45,6 +45,7 @@
 " Bundle: https://github.com/vim-scripts/nginx.vim.git
 " Bundle: https://github.com/vim-scripts/pep8.git
 " Bundle: https://github.com/vim-scripts/ruby.vim.git
+" Bundle: https://github.com/vim-scripts/sh.vim.git
 " Bundle: https://github.com/vim-scripts/SingleCompile.git
 " Bundle: https://github.com/vim-scripts/tComment.git
 " Bundle: https://github.com/vim-scripts/tir_black.git
