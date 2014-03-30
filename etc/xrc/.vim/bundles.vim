@@ -1,14 +1,11 @@
 " Yeni eklenti eklemek için bu dosyayı düzenlemek yerine ~/.vim/local.vim
 " dosyasını düzenleyin.
 
-" Bundle: https://github.com/Blackrush/vim-gocode
 " Bundle: https://github.com/bronson/vim-trailing-whitespace.git
 " Bundle: https://github.com/dag/vim-fish.git
 " Bundle: https://github.com/dart-lang/dart-vim-plugin.git
 " Bundle: https://github.com/ervandew/supertab.git
-" Bundle: https://github.com/garbas/vim-snipmate.git
-" Bundle: https://github.com/honza/vim-snippets.git
-" Bundle: https://github.com/jnwhiteh/vim-golang.git
+" Bundle: https://github.com/fatih/vim-go.git
 " Bundle: https://github.com/junegunn/vim-easy-align.git
 " Bundle: https://github.com/juvenn/mustache.vim.git
 " Bundle: https://github.com/kchmck/vim-coffee-script.git
@@ -19,6 +16,7 @@
 " Bundle: https://github.com/mileszs/ack.vim.git
 " Bundle: https://github.com/roktas/syntastic-more.git
 " Bundle: https://github.com/scrooloose/syntastic.git
+" Bundle: https://github.com/SirVer/ultisnips.git
 " Bundle: https://github.com/slim-template/vim-slim.git
 " Bundle: https://github.com/spiiph/vim-space.git
 " Bundle: https://github.com/tomtom/tlib_vim.git
@@ -40,8 +38,8 @@
 " Bundle: https://github.com/vim-scripts/Gist.vim.git
 " Bundle: https://github.com/vim-scripts/github-theme.git
 " Bundle: https://github.com/vim-scripts/gmcs.vim.git
-" Bundle: https://github.com/vim-scripts/IndexedSearch.git
 " Bundle: https://github.com/vim-scripts/indentpython.git
+" Bundle: https://github.com/vim-scripts/IndexedSearch.git
 " Bundle: https://github.com/vim-scripts/JSON.vim.git
 " Bundle: https://github.com/vim-scripts/localvimrc.git
 " Bundle: https://github.com/vim-scripts/matchit.zip.git
