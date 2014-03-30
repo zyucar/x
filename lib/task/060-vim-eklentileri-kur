@@ -22,6 +22,7 @@ $vimpluginupdateprog
 
 if ! anyattr server; then
 	say "Paket indisleri güncelleniyor..."
+	sudoattempt
 	xaptget update ||:
 
 	installdebs "YouCompleteMe eklentisi kuruluyor" vim-youcompleteme &&vam install youcompleteme
