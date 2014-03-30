@@ -20,38 +20,9 @@ vimpluginupdateprog="./bin/vim-update-bundles"
 say "Vim eklentileri kuruluyor/güncelleniyor..."
 $vimpluginupdateprog
 
-# Command-T eklenti yapılandırması beklediğimiz yerde olmalı
-if [ -f "./${COMMANDT_BUNDLE}/${COMMANDT_EXT}/extconf.rb" ]; then
-	# depo durumuna tekrar bak, güncelleme var mı?
-	if git_head_unfollow || \
-	   [ ! -f "./${COMMANDT_BUNDLE}/${COMMANDT_EXT}/ext.so" ]; then
-		# ruby1.8 gerekiyor, 1.9'da eklenti çöküyor
-		if hascommand ruby1.8 && hasdeb ruby1.8-dev; then
-			say "Command-T Ruby eklentisi derleniyor..."; (
-				cd "./${COMMANDT_BUNDLE}/${COMMANDT_EXT}"
-				ruby1.8 extconf.rb
-				make
-			) || cry "Command-T Ruby eklentisi derlenemedi"
-		else
-			cry "ruby1.8 kurulu değil; Command-T eklentisi çalışmayacak"
-		fi
-	fi
-fi
+if ! anyattr server; then
+	say "Paket indisleri güncelleniyor..."
+	xaptget update ||:
 
-# Gocode'u kur.  Bunun için güncel bir go sürümü lazım.
-if ! hascommand gocode; then
-	if hascommand go; then
-		say "Gocode kuruluyor..."
-		if [ -z "$GOPATH" ]; then
-			sudoattempt
-			if sudo go get -u "$GOCODE_PKG"; then
-				sudo rm -f /usr/local/bin/gocode
-				sudo cp "${GOCODE_DIR}/gocode" /usr/local/bin/
-			fi
-		else
-			go get -u "$GOCODE_PKG"
-		fi
-	elif ! anyattr server; then
-		cry "Go kurulu değil; Gocode kurulmayacak"
-	fi
+	installdebs "YouCompleteMe eklentisi kuruluyor" vim-youcompleteme &&vam install youcompleteme
 fi
