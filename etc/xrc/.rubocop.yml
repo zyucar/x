@@ -1,3 +1,6 @@
 # Use only ascii symbols in identifiers and comments.
 AsciiComments:
   Enabled: false
+# Document classes and non-namespace modules.
+Documentation:
+  Enabled: false
