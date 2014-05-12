@@ -17,22 +17,6 @@ function! s:has_buildfiles(...)
 	return 0
 endfunction
 
-" Go geliştirme ortamı bilgilerini topla
-function! s:goinfo()
-	for ext in [6, 8, 5]
-		let compiler = ext . 'g'
-		if executable(compiler)
-			return { 'ext': ext, 'compiler': compiler, 'linker': ext . 'l' }
-		endif
-	endfor
-	return {}
-endfunction
-
-" Go için ön hazırlık.
-if !exists('s:goinfo')
-	let s:goinfo = s:goinfo()
-endif
-
 if exists("g:loaded_syntastic_plugin")
 	sign define SyntasticError text=―▶ texthl=Search
 	sign define SyntasticWarning text=>> texthl=Warning
@@ -69,13 +53,6 @@ if exists("g:loaded_syntastic_plugin")
 endif
 
 if exists("g:loaded_SingleCompile")
-	if !empty(s:goinfo)
-		if has('unix')
-			call SingleCompile#SetTemplate('go', 'command', s:goinfo['compiler'])
-			call SingleCompile#SetTemplate('go', 'run', 'clear; ' . s:goinfo['linker'] . ' -o %< %<.' . s:goinfo['ext'] . ' && ./%<')
-		endif
-	endif
-
 	function! MakeOrSingleCompile()
 		if s:has_buildfiles()
 			make
