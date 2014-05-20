@@ -71,3 +71,5 @@
 #	default = simple
 [remote "origin"]
 	push = HEAD
+[user]
+	email = zeynep.ucar@bil.omu.edu.tr
